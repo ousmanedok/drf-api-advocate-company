@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from .advocates import advocates
 from .models import Advocate
 from .models import Company
-from .serializers import AdvocateSerializer, CompanySerializer
+from .serializers import AdvocateSerializer, CompanySerializer, AdvocateDetailSerializer, CompanyDetailSerializer
 from .pagination import StandardResultsSetPagination
 
 # Create your views here.
@@ -37,7 +37,7 @@ def getAdvocates(request):
 @api_view(['GET'])
 def getAdvocate(request, pk):
     advocate = Advocate.objects.get(id=pk)
-    serializer = AdvocateSerializer(advocate, many=False )
+    serializer = AdvocateDetailSerializer(advocate)
     return Response(serializer.data)  
 
 
@@ -55,5 +55,5 @@ def getCompanies(request):
 @api_view(['GET'])
 def getCompany(request, pk):
     company = Company.objects.get(id=pk)
-    serializer = CompanySerializer(company, read_only=True, many=False )
+    serializer = CompanyDetailSerializer(company)
     return Response(serializer.data)  
