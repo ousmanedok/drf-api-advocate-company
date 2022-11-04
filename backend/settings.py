@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2ry%$9mh4!pqte)#$jt3jy()#oq1rsdkjuet&at+&3^nya)m)0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ousmanedok.pythonanywhere.com", "127.0.0.1"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -139,6 +139,3 @@ CORS_ALLOW_ALL_ORIGINS = True
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-STATIC_ROOT = os.path.join(BASE_DIR, "static/images")
